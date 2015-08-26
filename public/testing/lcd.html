@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>faPI Control</title>
+		<script type="text/javascript" src="/webiopi.js"></script>
+		<script type="text/javascript">
+            webiopi().ready(function() {
+				
+				$("#lcd-text-line1").change(function() {
+                    webiopi().callMacro("setLcdLineOne", $(this).val());
+                });
+                $("#lcd-text-line2").change(function() {
+                    webiopi().callMacro("setLcdLineTwo", $(this).val());
+                });
+                $("#lcd-text-clear").click(function() {
+                    webiopi().callMacro("clearLcd");
+                })
+             })
+		</script>
+		<style type="text/css">
+				button {
+						display: block;
+						margin: 5px 5px 5px 5px;
+						width: 160px;
+						height: 45px;
+						font-size: 24pt;
+						font-weight: bold;
+						color: white;
+				}
+				
+				#gpio17.LOW {
+						background-color: Black;
+				}
+				
+				#gpio17.HIGH {
+						background-color: Blue;
+				}
+		</style>
+</head>
+<body>
+		<div id="controls" align="center">
+            Line 1: <input type="text" id="lcd-text-line1" maxlength="16"><br>
+            Line 2: <input type="text" id="lcd-text-line2" maxlength="16"><br>
+            <button id="lcd-text-clear">clear</button>
+        </div>
+</body>
+</html>
