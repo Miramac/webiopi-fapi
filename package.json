@@ -11,6 +11,6 @@
   "dependencies": {
     "angular": "^1.4.4",
     "browserify": "^11.0.1",
-    "jquery": "^2.1.4"
+    "jquery": "^3.0.0"
   }
 }
